@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# RewriteRule  РегулярноеВыражение  ПравилоЗамены  [Флаг,Флаг,... ]
+# Флаги:
+# NC - регистронезависимое сравнение
+# QSA - сохранить данные GET-параметров
+# L - Last
+#
+# В выражениях скобки ()...() - это группировки --> доступны в замене как $1, $2, ...
+
+RewriteRule ^registration(.*)$  reg.php?q=$1  [NC,QSA,L]
+
+RewriteRule  ^(\w\w)/admin/(\w+)/?$  admin.php?lang=$1&cmd=$2  [NC,QSA,L]

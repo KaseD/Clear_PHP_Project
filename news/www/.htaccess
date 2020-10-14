@@ -1,0 +1,9 @@
+RewriteEngine On
+
+RewriteRule ^/?$   /ru/news  [R=301]
+
+RewriteRule  ^admin/([^/]+)/([^/]+)$  admin.php?cmd=$1&dtl=$2 [NC,QSA,L]
+RewriteRule  ^admin/([^/]*)/?$        admin.php?cmd=$1        [NC,QSA,L]
+
+RewriteRule  ^(\w\w)/(\w+)/(\w+)/?$   index.php?lang=$1&cmd=$2&dtl=$3  [NC,QSA,L]
+RewriteRule  ^(\w\w)/(\w+)/?$         index.php?lang=$1&cmd=$2         [NC,QSA,L]
